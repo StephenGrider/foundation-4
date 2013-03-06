@@ -1,0 +1,21 @@
+{{ theme:partial src="_article_listing" fold="blog" lim="3" tax="no" }}
+
+{{# 
+====================================
+  NOTES
+====================================
+
+This is the default template (required), if you choose to not specify a template in your front matter, Statamic uses the following template hierarchy:
+
+If present: post.html
+Otherwise, if present: default.html
+Otherwise: 404.html
+
+See http://statamic.com/docs/how-statamic-works#markup-parsing for more information.
+
+This template is using the articles template partial with a variable which sets
+the limit (number of posts to display). Change the lim="5" variable to however many
+posts you would like to display.
+  
+#}}
+

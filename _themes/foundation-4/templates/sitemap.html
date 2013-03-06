@@ -1,0 +1,25 @@
+{{ entries:listing folder="blog" limit="1000" }}
+  <url>
+    <loc>{{ _site_url }}{{ url }}</loc>
+    <lastmod>{{ datestamp format="Y-m-d" }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+{{ /entries:listing }}
+{{ nav from="/" }}
+  <url>
+    <loc>{{ _site_url }}{{ url }}</loc>
+    <lastmod>{{ last_modified format="Y-m-d" }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+{{ /nav }}
+
+{{# 
+====================================
+  NOTES
+====================================
+
+This template generates a site map which includes your main blog articles and any links generated from your navigation. If your content folder is not called blog change the folder parameter to whatever you have named the folder.
+  
+#}}

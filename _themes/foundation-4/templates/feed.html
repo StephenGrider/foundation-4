@@ -1,0 +1,43 @@
+<rss version="2.0">
+   <channel>
+      <title><![CDATA[Your Website Name]]></title>
+      <link>{{ _site_url }}</link>
+      <description>{{ site_desc }}</description>
+      <lastBuildDate>{{ entries:listing folder="blog" limit="1" }}{{ datestamp format="r" }}{{ /entries:listing }}</lastBuildDate>
+      <language>en-us</language>
+      <webMaster>you@example.com (Your Name)</webMaster>
+      <copyright>Copyright {{ current_date format='Y' }}</copyright>
+      <ttl>3600</ttl>
+
+      {{ entries:listing folder="blog" limit="20" }}
+         <item>
+         <title><![CDATA[{{ title }}]]></title>
+         <author>{{ author }}</author>
+         <link>{{ permalink }}</link>
+         <guid>{{ permalink }}</guid>
+         <category>article</category>
+         <pubDate>{{ datestamp format="r" }}</pubDate>
+         <description><![CDATA[{{ summary }}]]></description>
+         </item>
+      {{ /entries:listing }}
+   </channel>
+</rss>
+
+{{# 
+====================================
+  NOTES
+====================================
+
+This is the RSS feed template, if you would like to have an RSS feed please change the following:
+
+The title: change "Your Website Name".
+The description: change this to your description.
+The folder: here we have set it to blog but if you choose a different name for your content folder then make sure it is set to the correct name.
+The Webmaster: Change the webMaster details to your own.
+Entries listing tag: make sure this is set to read the correct folder, here we have set it to blog.
+The category: change the category if required (currently set to article).
+The description: this uses the {{ summary }} variable which is the name set in the blog post entry page in the YAML front matter. If you have named your summary custom field something else you will need to change this variable.
+
+For more information see: http://statamicist.com/tips/creating-an-rss-feed
+  
+#}}

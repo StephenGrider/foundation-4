@@ -1,0 +1,34 @@
+include: meta                  # include the meta fields
+
+fields:
+  status:
+    display: Status
+    type: status
+
+  categories:
+    display: Categories
+    required: false
+    type: tags
+    instructions: Add categories.
+    
+  tags:                        # the template tag name -- in this example, {{ tags }}
+    display: Tags              # the control panel field label (optional)
+    required: false            # required: true/false for validation (optional, false by default)
+    default:                   # default value (optional)
+    type: tags                 # fieldtype (optional, text by default)
+    instructions: Add tags.    # instructions added above the field
+    
+  summary:
+    display: Summary
+    required: true
+    default:
+    type: textarea
+    instructions: Add a short summary for the article here.
+    
+  content:
+    display: Article Content
+    required: false
+    default:
+    type: redactor
+    image_dir: assets/img/blog
+    instructions: Add the main article content here.

@@ -1,0 +1,20 @@
+<nav role="navigation" class="top-bar">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">Foundation Base</a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+  <section class="top-bar-section">
+  <ul class="right">
+    <li {{ if !segment_1 }}class="active"{{ endif }}>
+      <a href="{{ homepage }}">Home</a>
+    </li>
+    {{ nav from="/" max_depth="1" }}
+    <li {{ if is_current }}class="active"{{ endif }}>
+      <a href="{{ url }}">{{ title }}</a>
+    </li>
+    {{ /nav }}
+  </ul>
+  </section>
+</nav>

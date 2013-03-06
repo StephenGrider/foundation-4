@@ -1,0 +1,23 @@
+// VARIABLES FOR APP.SCSS
+
+$white        : rgb(255,255,255);
+$black        : rgb(0,0,0);
+$darkgrey     : lighten($black, 10%);
+$grey         : lighten($black, 50%);
+$lightgrey    : lighten($black, 75%);
+$lightergrey  : lighten($black, 90%);
+
+// APP STYLES
+
+.no-list-style {
+  list-style: none;
+  margin-left: 0;
+
+  li {
+    border-bottom: 1px dashed $lightgrey;
+  }
+}
+footer[role="contentinfo"] {
+  padding: 1em 0;
+  border-top: 1px solid $lightgrey;
+}

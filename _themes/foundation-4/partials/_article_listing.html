@@ -1,0 +1,78 @@
+{{ entries:listing
+  folder="{fold}"
+  limit="{lim}"
+  taxonomy="{tax}"
+}}
+  {{ if no_results }}
+  <p>Sorry there are no entries to display at this time.</p>
+  {{ else }}
+
+    {{ if count == "1" }}
+    <ol class="no-list-style">
+    {{ endif }}
+      <li>
+        <article>
+          <h3><a href="{{ url }}">{{ title }}</a></h3>
+          <time pubdate datetime="{{ datestamp format="Y-m-d" }}">{{ date }}</time>
+
+          {{ if categories_list && tags_list }}
+          <p>Filed under: {{ categories_url_list }} and tagged with: {{ tags_url_list }}</p>
+          {{ endif }}
+
+          {{ if categories_list && !tags_list }}
+          <p>Filed under: {{ categories_url_list }}</p>
+          {{ endif }}
+
+          {{ if !categories_list && tags_list }}
+          <p>Tagged with: {{ tags_url_list }}</p>
+          {{ endif }}
+
+          {{ summary|markdown }}
+        </article>
+      </li>
+    {{ if count == total_results }}
+    </ol>
+    {{ endif }}
+
+  {{ endif }}
+{{ /entries:listing }}
+
+{{# Add simple pagination: limit must equal entries limit #}}
+
+{{ entries:pagination
+    folder="{fold}"
+    limit="{lim}"
+    taxonomy="{tax}"
+  }}
+  {{# THIS SHOULD USE LIM VARIABLE BUT DOESN'T WORK - FIX COMING 1.5 #}}
+  {{ if total_items > "3" }}
+  <div class="row">
+    {{ if previous_page }}
+    <div class="large-3 columns">
+      <a href="{{ previous_page }}" class="button secondary expand">&larr; Previous</a>
+    </div><!-- END .large-6 -->
+    {{ endif }}
+    {{ if previous_page && next_page  }}
+    <div class="large-3 large-offset-6 columns">
+      <a href="{{ next_page }}" class="button secondary expand">Next &rarr;</a>
+    </div><!-- END .large-6 -->
+    {{ endif }}
+    {{ if !previous_page && next_page  }}
+    <div class="large-3 large-offset-9 columns">
+      <a href="{{ next_page }}" class="button secondary expand">Next &rarr;</a>
+    </div><!-- END .large-6 -->
+    {{ endif }}
+  </div><!-- END .row -->
+  {{ endif }}
+{{ /entries:pagination }}
+
+{{# 
+====================================
+  NOTES
+====================================
+
+This partial displays an article listing. The partials are designed so that you can use them modularly in your templates. The variables which are used in the entries listing tag are set in the template which calls the partial e.g. look in the default template you will see three variables: fold, lim, and tax. It is here where you set those values to whichever folder name the articles are reading from e.g. blog, the number of articles to display (lim) and whether you are displaying taxonomies or not.
+
+For more information on partials see http://statamic.com/docs/core-template-tags/theme-helpers#partial.
+
+#}}

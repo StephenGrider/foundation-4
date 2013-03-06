@@ -1,0 +1,44 @@
+<article>
+    <header>
+      <h3>{{ title }}</h3>
+      <time pubdate datetime="{{ datestamp format="Y-m-d" }}">{{ date }}</time>
+
+      {{ if categories_list && tags_list }}
+      <p>Filed under: {{ categories_url_list }} and tagged with: {{ tags_url_list }}</p>
+      {{ endif }}
+
+      {{ if categories_list && !tags_list }}
+      <p>Filed under: {{ categories_url_list }}</p>
+      {{ endif }}
+
+      {{ if !categories_list && tags_list }}
+      <p>Tagged with: {{ tags_url_list }}</p>
+      {{ endif }}
+    </header>
+
+    {{ content }}
+    
+    <footer>
+      <a href="/" class="button secondary">&larr; Back</a>
+    </footer>
+</article>
+
+{{ if show_comments }}
+<div class="comments">
+  <h3>Leave Your Comments</h3>
+  {{ disqus:comments account="{ disqus_account }" }}
+</div>
+{{ endif }}
+
+{{#
+====================================
+  NOTES
+====================================
+
+This partial displays a single article if you require a listing use the _article_listings partial. The partials are designed so that you can use them modularly in your templates.
+
+For more information on partials see http://statamic.com/docs/core-template-tags/theme-helpers#partial.
+
+There is a comments section which uses Disqus, to make this work you will need to set comments to yes in the theme.yaml file and add your Disqus short name in the same file. For more information on using Disqus comments see this post: http://garethredfern.com/article/using-disqus-with-statamic.
+
+ #}}

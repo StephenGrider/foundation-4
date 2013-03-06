@@ -1,0 +1,11 @@
+fields:
+  meta_title:
+    display: Page Title
+    type: text
+    instructions: Enter the page title to display in Google's search results.
+  meta_desc:
+    display: Page Description
+    type: text
+    instructions: Enter a short description to display in Google's search results roughly 155 characters.
+
+hide: true

@@ -1,0 +1,19 @@
+<section role="main">
+  {{ if segment_2 == "categories" }}
+  <h2>Article Category: {{ taxonomy_slug|deslugify|title }}</h2>
+  {{ endif }}
+  {{ if segment_2 == "tags" }}
+  <h2>Article Tags: {{ taxonomy_slug|deslugify|title }}</h2>
+  {{ endif }}
+
+  {{ theme:partial src="_article_listing" fold="blog" lim="5" tax="yes" }}
+</section><!-- END role="main" -->
+
+{{# 
+====================================
+  NOTES
+====================================
+
+This is the taxonomy listing template, it displays content when a category or tag is clicked. For more information see: http://statamic.com/docs/core-template-tags/taxonomy.
+  
+#}}

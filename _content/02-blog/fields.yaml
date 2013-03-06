@@ -1,0 +1,3 @@
+type: date                     # see http://statamic.com/docs/control-panel/fieldsets#fieldsets-and-entries
+hide: yes                      # hide page from Add Page list
+_fieldset: post                # use the post fieldset

@@ -1,0 +1,67 @@
+{{ theme:partial src="_doc_head" }}
+<body>
+  
+  <div class="row">
+    <div class="large-12 columns">
+      {{ theme:partial src="_header" }}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-9 columns">
+      {{ layout_content }}
+    </div>
+    <div class="large-3 columns">
+      {{ theme:partial src="_aside" }}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">
+      {{ theme:partial src="_footer" }}
+    </div>
+  </div>
+
+<!--[if gte IE 8]><!-->
+<script>
+  document.write('<script src={{ theme_path }}js/vendor/'
+    + ('__proto__' in {} ? 'zepto' : 'jquery')
+    + '.js><\/script>');
+</script>
+
+<script src="{{ theme:js src="foundation/foundation" }}"></script>
+<script src="{{ theme:js src="foundation/foundation.alerts" }}"></script>
+<script src="{{ theme:js src="foundation/foundation.clearing" }}"></script>
+<script src="{{ theme:js src="foundation/foundation.cookie" }}"></script>
+<script src="{{ theme:js src="foundation/foundation.dropdown" }}"></script>
+<script src="{{ theme:js src="foundation/foundation.forms" }}"></script>
+<script src="{{ theme:js src="foundation/foundation.joyride" }}"></script>
+<script src="{{ theme:js src="foundation/foundation.magellan" }}"></script>
+<script src="{{ theme:js src="foundation/foundation.orbit" }}"></script>
+<script src="{{ theme:js src="foundation/foundation.placeholder" }}"></script>
+<script src="{{ theme:js src="foundation/foundation.reveal" }}"></script>
+<script src="{{ theme:js src="foundation/foundation.section" }}"></script>
+<script src="{{ theme:js src="foundation/foundation.tooltips" }}"></script>
+<script src="{{ theme:js src="foundation/foundation.topbar" }}"></script>
+
+<script>
+$(document).foundation();
+</script>
+
+<script src="{{ theme:js }}"></script>
+<!--<![endif]-->
+</body>
+</html>
+
+{{#
+====================================
+  NOTES
+====================================
+
+This is the default layouts template used by all pages. If no other layout file is called then Statamic will use this file.
+
+For more information on how Statamic works and the three distinct pieces: content file, template and layout see http://statamic.com/docs/how-statamic-works#templating-and-themes.
+
+The RSS link is used in the header. If you are creating an RSS feed make sure to change the title attribute. If you are not creating an RSS feed then you can delete this. For more information on the RSS Feed set up see the feed.html template.
+
+#}}

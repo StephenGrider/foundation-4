@@ -1,0 +1,6 @@
+hide: yes
+include: meta                  # include the meta fields
+
+fields:
+  content:
+    type: hidden

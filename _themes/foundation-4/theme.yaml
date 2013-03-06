@@ -1,0 +1,21 @@
+###########################################################################################
+#
+#  THEME VARIABLES
+#
+###########################################################################################
+
+# Theme name
+theme_name: Statarkers
+
+# Comments + Disqus
+disqus_account: changeme
+show_comments: no
+
+# Blog
+blog_name: blog
+
+# Global text snippets
+no_results_text: "Sorry, no results found."
+
+# Site Description
+site_desc: "Enter a description which will display in your home page meta description and RSS feed."
