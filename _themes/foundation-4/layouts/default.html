@@ -24,9 +24,9 @@
 
 <!--[if gte IE 8]><!-->
 <script>
-  document.write('<script src={{ theme_path }}js/vendor/'
-    + ('__proto__' in {} ? 'zepto' : 'jquery')
-    + '.js><\/script>');
+  document.write('<script src=' +
+  ('__proto__' in {} ? '/{{ theme_path }}js/vendor/zepto' : '/{{ theme_path }}js/vendor/jquery') +
+  '.js><\/script>')
 </script>
 
 <script src="{{ theme:js src="foundation/foundation" }}"></script>
