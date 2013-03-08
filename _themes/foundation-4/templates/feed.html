@@ -3,13 +3,13 @@
       <title><![CDATA[Your Website Name]]></title>
       <link>{{ _site_url }}</link>
       <description>{{ site_desc }}</description>
-      <lastBuildDate>{{ entries:listing folder="blog" limit="1" }}{{ datestamp format="r" }}{{ /entries:listing }}</lastBuildDate>
+      <lastBuildDate>{{ entries:listing folder="{{ blog_name }}" limit="1" }}{{ datestamp format="r" }}{{ /entries:listing }}</lastBuildDate>
       <language>en-us</language>
       <webMaster>you@example.com (Your Name)</webMaster>
       <copyright>Copyright {{ current_date format='Y' }}</copyright>
       <ttl>3600</ttl>
 
-      {{ entries:listing folder="blog" limit="20" }}
+      {{ entries:listing folder="{{ blog_name }}" limit="20" }}
          <item>
          <title><![CDATA[{{ title }}]]></title>
          <author>{{ author }}</author>

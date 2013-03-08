@@ -2,7 +2,7 @@
   <div class="small-6 large-12 columns">
     <h3>Categories</h3>
     <ul class="side-nav">
-      {{ taxonomy:listing folder="blog" type="categories" }}
+      {{ taxonomy:listing folder="{{ blog_name }}" type="categories" }}
         <li><a href="{{ url }}">{{ name }} ({{ count }})</a></li>
       {{ /taxonomy:listing }}
     </ul>
@@ -10,7 +10,7 @@
   <div class="small-6 large-12 columns">
     <h3>Tags</h3>
     <ul class="side-nav">
-      {{ taxonomy:listing folder="blog" type="tags" }}
+      {{ taxonomy:listing folder="{{ blog_name }}" type="tags" }}
         <li><a href="{{ url }}">{{ name }} ({{ count }})</a></li>
       {{ /taxonomy:listing }}
     </ul>

@@ -6,7 +6,7 @@
   <h2>Article Tags: {{ taxonomy_slug|deslugify|title }}</h2>
   {{ endif }}
 
-  {{ theme:partial src="_article_listing" fold="blog" lim="5" tax="yes" }}
+  {{ theme:partial src="_article_listing" fold="{{ blog_name }}" lim="5" tax="yes" }}
 </section><!-- END role="main" -->
 
 {{# 
