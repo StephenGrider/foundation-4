@@ -1,6 +1,6 @@
 {{# TOP LEVEL PAGES === #}}
 
-{{ if segment_1 != "404" && segment_1 != "{ blog_name }" }}
+{{ if segment_1 != "404" && segment_1 != "blog" }}
   <title>{{ if meta_title }}{{ meta_title }}{{ else }}{{ title }}{{ endif }} | {{ _site_name }}</title>
   {{ if meta_desc }}
   <meta name="description" content="{{ meta_desc }}">
@@ -9,19 +9,19 @@
 
 {{# BLOG =============== #}}
 
-{{ if segment_1 == "{ blog_name }" && segment_2 == "" }}
+{{ if segment_1 == "blog" && segment_2 == "" }}
   <title>{{ if meta_title }}{{ meta_title }}{{ else }}{{ title }}{{ endif }} | {{ _site_name }}</title>
   {{ if meta_desc }}
   <meta name="description" content="{{ meta_desc }}">
   {{ endif }}
 {{ endif }}
 
-{{ if segment_1 == "{ blog_name }" && segment_2 == "categories" }}
+{{ if segment_1 == "blog" && segment_2 == "categories" }}
   <title>Articles With The Category {{ taxonomy_slug|deslugify|title }} | {{ _site_name }}</title>
   <meta name="description" content="A selection of articles that are in the category of {{ taxonomy_slug|deslugify }}.">
 {{ endif }}
 
-{{ if segment_1 == "{ blog_name }" && segment_2 == "tags" }}
+{{ if segment_1 == "blog" && segment_2 == "tags" }}
   <title>Articles Tagged {{ taxonomy_slug|deslugify|title }} | {{ _site_name }}</title>
   <meta name="description" content="A selection of articles tagged under {{ taxonomy_slug|deslugify }}.">
 {{ endif }}
