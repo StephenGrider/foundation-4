@@ -16,3 +16,6 @@ To install the theme follow the instructions below.
 6. If you are going to add any additional styles make sure that you have the zurb-foundation gem installed and start watching the foundation-4 theme directory using the compass watch command. The [Foundation 4 Documents](http://foundation.zurb.com/docs/sass.html) explain how to set this up if you are unsure.
 7. All user styles should be added to the _app.scss file (located in the sass folder).
 8. Any user JavaScripts should be added to the foundation-4.js file located in the js folder.
+
+##More Information
+You can visit [Statamic Themes](http://www.statamicthem.es/themes).
