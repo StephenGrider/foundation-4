@@ -8,7 +8,7 @@ The two work together to help you create a responsive website with a blog in min
 
 To install the theme follow the instructions below.
 
-1. [Install Statamic:](http://statamic.com/docs/getting-started/installing-and-updating) **Don't forget to set up your .htaccess file**.
+1. [Install Statamic:](http://statamic.com/learn/digging-in/installing) **Don't forget to set up your .htaccess file**.
 2. Copy the foundation-4 theme folder to your _themes folder. Please note if you have downloaded the foundation-4-master folder **the foundation-4 theme is located inside the _themes folder**.
 3. Delete the contents of your Statamic install fieldsets folder then copy the new fieldsets from the foundation-4-master folder (located in _config/fieldsets).
 4. If you would like to use the dummy content provided with the foundation-4 theme (recommended) then delete the contents of your existing _content folder and copy the files and folders from the foundation-4-master _content folder.
