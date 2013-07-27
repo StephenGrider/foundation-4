@@ -1,23 +1,24 @@
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
    <channel>
-      <title><![CDATA[Your Website Name]]></title>
+      <title><![CDATA[{{ _site_name }}]]></title>
       <link>{{ _site_url }}</link>
-      <description>{{ site_desc }}</description>
-      <lastBuildDate>{{ entries:listing folder="{{ blog_name }}" limit="1" }}{{ datestamp format="r" }}{{ /entries:listing }}</lastBuildDate>
-      <language>en-us</language>
-      <webMaster>you@example.com (Your Name)</webMaster>
+      <description>{{ site_desc|striptags }}</description>
+      <lastBuildDate>{{ entries:listing folder="{blog_name}" limit="1" }}{{ datestamp format="r" }}{{ /entries:listing }}</lastBuildDate>
+      <language>en-gb</language>
+      <webMaster>gareth@garethredfern.com (Gareth Redfern)</webMaster>
       <copyright>Copyright {{ current_date format='Y' }}</copyright>
       <ttl>3600</ttl>
+      <atom:link href="{{ _site_url }}/feed" rel="self" type="application/rss+xml" />
 
-      {{ entries:listing folder="{{ blog_name }}" limit="20" }}
+      {{ entries:listing folder="{blog_name}" limit="20" }}
          <item>
          <title><![CDATA[{{ title }}]]></title>
-         <author>{{ author }}</author>
+         <author>gareth@garethredfern.com ({{ author }})</author>
          <link>{{ permalink }}</link>
          <guid>{{ permalink }}</guid>
          <category>article</category>
          <pubDate>{{ datestamp format="r" }}</pubDate>
-         <description><![CDATA[{{ summary }}]]></description>
+         <description><![CDATA[{{ content }}]]></description>
          </item>
       {{ /entries:listing }}
    </channel>
@@ -30,13 +31,12 @@
 
 This is the RSS feed template, if you would like to have an RSS feed please change the following:
 
-The title: change "Your Website Name".
-The description: change this to your description.
-The folder: here we have set it to blog but if you choose a different name for your content folder then make sure it is set to the correct name in the theme.yaml file.
+The title: uses the {{ _site_name }} variable to output your website name.
+The description: This template uses a theme variable (see theme.yaml file) to output the description.
+The folder: here we have set it to {blog_name} which is a global theme variable (see theme.yaml file) but if you choose a different name for your content folder then make sure it is set to the correct name.
 The Webmaster: Change the webMaster details to your own.
-Entries listing tag: make sure this is set to read the correct folder, here we have set it to blog in the theme.yaml file.
+Entries listing tag: make sure this is set to read the correct folder, here we have set it to the {{ blog_name }} template variable (see theme.yaml file).
 The category: change the category if required (currently set to article).
-The description: this uses the {{ summary }} variable which is the name set in the blog post entry page in the YAML front matter. If you have named your summary custom field something else you will need to change this variable.
 
 For more information see: http://statamicist.com/tips/creating-an-rss-feed
   
