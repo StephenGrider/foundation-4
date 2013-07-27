@@ -18,4 +18,4 @@ To install the theme follow the instructions below.
 8. Any user JavaScripts should be added to the foundation-4.js file located in the js folder.
 
 ##More Information
-You can visit [Statamic Themes](http://www.statamicthem.es/themes).
+You can visit [Statamic Themes](http://www.statamicthemes.io/themes).
