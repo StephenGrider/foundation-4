@@ -16,6 +16,7 @@ $lightergrey  : lighten($black, 90%);
   li {
     margin-bottom: 1em;
     border-bottom: 1px dashed $lightgrey;
+    &:last-child { border-bottom: none; }
   }
 }
 footer[role="contentinfo"] {

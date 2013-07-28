@@ -1,0 +1,7 @@
+.sass-cache
+.DS_Store
+_cache/_app/
+*.log
+/assets/img/cache/
+
+# These are some useful ignores for Statamic theme building. #
